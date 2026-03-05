@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "check:fix": "biome check --write ."
+    "check:fix": "biome check --write .",
+    "build:preview": "tsc && vite build && vite preview"
   },
   "keywords": [],
   "author": "",

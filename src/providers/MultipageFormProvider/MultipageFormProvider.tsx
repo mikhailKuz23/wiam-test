@@ -1,10 +1,15 @@
 import { useCallback, useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import { FormProvider, useForm } from 'react-hook-form'; // стандарт для работы с формами, гибкое api
+import { FormProvider, useForm } from 'react-hook-form'; // стандарт при разработке форм на react, гибкое api, большое комьюнити
 import { Outlet, useNavigate } from 'react-router-dom';
 import { FORM_INIT_VALUES, ROUTES } from '@/constants';
 import type { IForm } from '@/types';
 
+/**
+ * Немного оверинжиниринга:) Не захотелось захламлять App инициализацией формы.
+ * Плюс, если в приложение добавлять другие роуты не будет ререндера
+ * всего приложения при изменениях в форме
+ */
 export const MultipageFormProvider = () => {
   const navigate = useNavigate();
   const [modalState, setModalState] = useState<{ isOpen: boolean; data?: IForm }>({ isOpen: false, data: undefined });
@@ -45,7 +50,7 @@ export const MultipageFormProvider = () => {
           <>
             <Modal.Header closeButton>
               <Modal.Title>
-                Поздравляем, {modalState.data.surname} {modalState.data.name}!
+                Поздравляем, {modalState.data.surname} {modalState.data.name}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
