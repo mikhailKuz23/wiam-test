@@ -1,0 +1,1 @@
+export { AreaInfo } from './AreaInfo';
