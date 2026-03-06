@@ -42,7 +42,7 @@ export const MultipageFormProvider = () => {
 
   return (
     <FormProvider {...formApi}>
-      <form onSubmit={handleSubmint}>
+      <form onSubmit={handleSubmint} className='form'>
         <Outlet />
       </form>
       <Modal show={modalState.isOpen} onHide={handleCloseModal}>

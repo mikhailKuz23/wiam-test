@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { Form } from 'react-bootstrap';
 import { Controller, useFormContext } from 'react-hook-form';
-import { PatternFormat } from 'react-number-format'; // легкая библиотека для работы масками
+import { PatternFormat } from 'react-number-format'; // легкая библиотека для работы масками + разработческая лень:)
 import { FormField } from '@/components/FormField';
 import { TEXTS } from '@/constants';
 import type { IForm } from '@/types';

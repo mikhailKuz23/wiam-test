@@ -8,8 +8,7 @@ interface Props {
 
 export const FormFieldsContainer = ({ children, buttons }: Props) => {
   return (
-    // знаю, так делать плохо, не стал устанавливать css-modules)
-    <Card style={{ minWidth: '400px' }}>
+    <Card>
       <Card.Body>
         <Stack gap={4}>{children}</Stack>
         {buttons && (

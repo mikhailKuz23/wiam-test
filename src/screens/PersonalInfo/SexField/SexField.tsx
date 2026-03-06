@@ -18,7 +18,14 @@ export const SexField = () => {
 
   return (
     <FormField label={TEXTS.sexFieldLabel} required errorMessage={fieldError?.message}>
-      <Form.Select {...register('sex', { required: TEXTS.requiredErrorMessage })} isInvalid={!!fieldError}>
+      <Form.Select
+        {...register('sex', { required: TEXTS.requiredErrorMessage })}
+        isInvalid={!!fieldError}
+        defaultValue=''
+      >
+        <option value='' disabled hidden>
+          {TEXTS.sexFieldPlaceholderOption}
+        </option>
         {OPTIONS.map((option) => (
           <option key={option.value} value={option.value}>
             {option.name}

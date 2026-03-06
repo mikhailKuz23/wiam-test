@@ -6,10 +6,15 @@ export const ROUTES = {
   loan: '/loan',
 };
 
-export const MIN_AMOUNT = 200;
-export const MAX_AMOUNT = 1000;
-export const MIN_TERM = 10;
-export const MAX_TERM = 30;
+export const AMOUNT_RANGE = {
+  min: 200,
+  max: 1000,
+};
+
+export const TERM_RANGE = {
+  min: 10,
+  max: 30,
+};
 
 export const FORM_INIT_VALUES: IForm = {
   name: '',
@@ -17,8 +22,8 @@ export const FORM_INIT_VALUES: IForm = {
   sex: '',
   address: '',
   workplace: '',
-  amount: MIN_AMOUNT,
-  term: MIN_TERM,
+  amount: AMOUNT_RANGE.min,
+  term: TERM_RANGE.min,
   phone: '',
 };
 
@@ -29,21 +34,25 @@ export const TEXTS = {
   goNext: 'Далее',
   goBack: 'Назад',
   sexFieldLabel: 'Пол',
+  sexFieldPlaceholderOption: 'Укажите пол',
   workplaceFieldLabel: 'Место работы',
+  workplaceFieldPlaceholderOption: 'Укажите место работы',
   nameFieldLabel: 'Имя',
   nameFieldPlaceholder: 'Введите имя',
   surnameFieldLabel: 'Фамилия',
   surnameFieldPlaceholder: 'Введите фамилию',
   loanTermFieldLabel: 'Срок займа',
-  maxTerm: `${MAX_TERM} дн.`,
-  minTerm: `${MIN_TERM} дн.`,
+  maxTerm: `${TERM_RANGE.max} дн.`,
+  minTerm: `${TERM_RANGE.min} дн.`,
   selectedTerm: (value: number) => `Выбранное количество дней: ${value}`,
-  maxAmount: `${MAX_AMOUNT}$`,
-  minAmount: `${MIN_AMOUNT}$`,
+  maxAmount: `${AMOUNT_RANGE.max}$`,
+  minAmount: `${AMOUNT_RANGE.min}$`,
   selectedAmount: (value: number) => `Выбранная сумма: ${value}$`,
   amountFieldLabel: 'Сумма займа',
   submitApplication: 'Подать заявку',
   phoneFieldPlaceholder: '0XX XXX XXX',
   phoneFieldLabel: 'Телефон',
   phoneFieldValidationError: 'Введите полный номер телефона',
+  goHome: 'Вернуться на главную',
+  pageNotFound: 'Упс! Страница, которую вы ищете, не существует',
 };

@@ -12,8 +12,9 @@ export const OptionsProvider = ({ children }: { children: ReactNode }) => {
   const [options, setOptions] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   /**
-   * Реф для предотвращения race condition, если два компонента
-   * одновременно вызовут fetchOptions
+   * Реф для предотвращения двойной загрузки, если два компонента
+   * одновременно вызовут fetchOptions. В конетксте текущей задачи наверное
+   * перегнул c оптимизацией)
    */
   const fetchRef = useRef(false);
   const abortControllerRef = useRef<AbortController | null>(null);

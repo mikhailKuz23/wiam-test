@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ROUTES } from '@/constants';
+import { NotFound } from './components/NotFound';
 import { MultipageFormProvider } from './providers/MultipageFormProvider';
 import { OptionsProvider } from './providers/OptionsListProvider';
 import { AreaInfo } from './screens/AreaInfo';
@@ -17,6 +18,8 @@ export const App = () => {
               <Route path={ROUTES.area} element={<AreaInfo />} />
               <Route path={ROUTES.loan} element={<LoanInfo />} />
             </Route>
+
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
       </OptionsProvider>

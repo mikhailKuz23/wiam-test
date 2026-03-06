@@ -25,7 +25,9 @@ export const WorkplaceField = () => {
         isInvalid={!!fieldError}
         defaultValue=''
       >
-        <option value='' disabled hidden />
+        <option value='' disabled hidden>
+          {TEXTS.workplaceFieldPlaceholderOption}
+        </option>
         {options.map((option) => (
           <option key={option} value={option}>
             {option}
